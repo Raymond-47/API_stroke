@@ -1,0 +1,18 @@
+version: '3.6'
+services: 
+  flask:
+    image: stroke-flask
+    container_name: stroke-flask
+    ports: 
+      - 127.0.0.1:5000:5000
+    volumes: 
+      - ./docker-configuration/script:/app
+  
+  streamlit:
+    image: stroke-streamlit
+    container_name: stroke-streamlit
+    ports: 
+      - 127.0.0.1:8501:8501
+    volumes: 
+      - ./docker-configuration/script:/app
+
